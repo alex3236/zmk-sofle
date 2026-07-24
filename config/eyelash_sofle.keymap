@@ -110,7 +110,7 @@
 &kp N               &kp M               &kp COMMA           &kp DOT             &kp FSLH            &kp ENTER           &kp C_MUTE
 
 &kp LCTRL           &kp LEFT_GUI        &lt 3 LALT          &lt 2 SPACE         &lt 1 ENTER         &kp ENTER
-&lt 1 ENTER         &lt 2 SPACE         &kp RIGHT_ALT       &kp RIGHT_GUI       &kp RIGHT_CTRL
+&lt 1 ENTER         &lt 2 SPACE         &kp RIGHT_ALT       &kp RIGHT_GUI       &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
