@@ -64,7 +64,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: SYM}
   - $$mdi:apple-keyboard-option$$
   - RIGHT GUI
-  - RIGHT CTRL
+  - $$mdi:apple-keyboard-control$$
   NAV:
   - F1
   - F2
