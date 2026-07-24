@@ -29,6 +29,11 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
+&mt {
+    flavor = "balanced";
+    require-prior-idle-ms = <150>;
+};
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
