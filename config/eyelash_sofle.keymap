@@ -109,12 +109,12 @@
 &kp LSHFT           &kp Z               &kp X               &kp C               &kp V               &kp B               &kp RIGHT_ARROW
 &kp N               &kp M               &kp COMMA           &kp DOT             &kp FSLH            &kp ENTER           &kp C_MUTE
 
-&kp LCTRL           &kp LEFT_GUI        &lt 3 LALT          &lt 1 SPACE         &lt 2 ENTER         &kp ENTER
-&lt 2 ENTER         &lt 1 SPACE         &kp RIGHT_ALT       &kp RIGHT_GUI       &kp RIGHT_CTRL
+&kp LCTRL           &kp LEFT_GUI        &lt 3 LALT          &lt 2 SPACE         &lt 1 ENTER         &kp ENTER
+&lt 1 ENTER         &lt 2 SPACE         &kp RIGHT_ALT       &kp RIGHT_GUI       &kp RIGHT_CTRL
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;F
-            display-name = "LAYER0";
+            sensor-bindings = <&rsr_vol &rsr_trans>;
+            display-name = "BASE";
         };
 
         layer_1 {
@@ -136,28 +136,27 @@
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
-            display-name = "LAYER1";
+            display-name = "NAV";
         };
 
         layer_2 {
             bindings = <
-&trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans
+&kp TILDE           &kp EXCL            &kp AT              &kp HASH            &kp DLLR            &kp PRCNT           &trans
+&kp CARET           &kp AMPS            &kp ASTRK           &kp LPAR            &kp RPAR            &kp DEL
 
-&trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans
+&trans              &kp GRAVE           &kp MINUS           &kp EQUAL           &kp PLUS            &kp BSLH            &trans
+&kp PIPE            &kp LBRC            &kp RBRC            &kp COLON           &kp QUESTION        &kp BSLH
 
-&trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans
+&trans              &kp TILDE           &kp UNDERSCORE      &kp ASTERISK        &kp SLASH           &kp PERCENT         &trans
+&kp EXCL            &kp LEFT_BRACKET    &kp RIGHT_BRACKET   &kp LESS_THAN       &kp GREATER_THAN    &kp DOUBLE_QUOTES
 
-&trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans              &trans
+&trans              &kp AMPS            &kp PIPE            &kp CARET           &kp HASH            &kp AT              &trans
+&kp DOLLAR          &kp COMMA           &kp DOT             &kp SEMI            &kp APOS            &trans              &trans
 
 &trans              &trans              &trans              &trans              &trans              &trans
 &trans              &trans              &trans              &trans              &trans
             >;
-
-            display-name = "LAYER2";
+            display-name = "SYM";
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
@@ -194,14 +193,14 @@
 &trans              &out OUT_USB        &out OUT_BLE        &trans              &trans              &trans              &trans
 &trans              &trans              &trans              &trans              &trans              &trans
 
-&rgb_ug RGB_OFF     &sys_reset          &rgb_ug RGB_ON      &bootloader         &rgb_ug RGB_EFF     &rgb_ug RGB_EFR     &rgb_ug RGB_SPI
-&rgb_ug RGB_BRI     &rgb_ug RGB_BRD     &sys_reset          &soft_off           &bootloader         &trans              &trans
+&trans              &rgb_ug RGB_OFF     &rgb_ug RGB_ON      &rgb_ug RGB_EFF     &rgb_ug RGB_EFR     &rgb_ug RGB_SPI     &trans
+&trans              &rgb_ug RGB_BRI     &rgb_ug RGB_BRD     &sys_reset          &soft_off           &bootloader         &trans
 
 &trans              &trans              &trans              &trans              &trans              &trans
 &trans              &trans              &trans              &trans              &trans
             >;
 
-            display-name = "LAYER4";
+            display-name = "SYS";
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
     };
