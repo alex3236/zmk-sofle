@@ -52,6 +52,14 @@
             ccw-binding = <&kp C_VOL_DN>;
         };
 
+        rsr_lr: rsr_lr {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&kp RIGHT>;
+            ccw-binding = <&kp LEFT>;
+        };
+
         rsr_trans: rsr_trans {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -65,6 +73,11 @@
         softoff {
             bindings = <&soft_off>;
             key-positions = <14 28 40>;
+        };
+
+        game {
+            bindings = <&tog 5>;
+            key-positions = <0 12>;
         };
     };
 
@@ -95,7 +108,7 @@
 // L6 + JoyRight + R6 + ScrollPress
 // L5 + JoyPress + R5
 
-        layer0 {
+        base {
             bindings = <
 &kp ESC             &kp N1              &kp N2              &kp N3              &kp N4              &kp N5              &kp UP_ARROW
 &kp N6              &kp N7              &kp N8              &kp N9              &kp N0              &kp BACKSPACE
@@ -107,7 +120,7 @@
 &kp H               &mt RGUI J          &mt RALT K          &mt RSHFT L         &mt RCTL SEMI       &kp APOS
 
 &kp LSHFT           &kp Z               &kp X               &kp C               &kp V               &kp B               &kp RIGHT_ARROW
-&kp N               &kp M               &kp COMMA           &kp DOT             &kp FSLH            &kp ENTER           &kp C_MUTE
+&kp N               &kp M               &kp COMMA           &kp DOT             &kp FSLH            &lt 4 ENTER           &kp C_MUTE
 
 &kp LCTRL           &kp LEFT_GUI        &lt 3 LALT          &lt 2 SPACE         &lt 1 ENTER         &kp ENTER
 &lt 1 ENTER         &lt 2 SPACE         &kp RIGHT_ALT       &kp RIGHT_GUI       &kp RIGHT_CONTROL
@@ -117,7 +130,7 @@
             display-name = "BASE";
         };
 
-        layer_1 {
+        nav {
             bindings = <
 &kp F1              &kp F2              &kp F3              &kp F4              &kp F5              &kp F6              &mmv MOVE_UP
 &kp F7              &kp F8              &kp F9              &kp F10             &kp F11             &kp F12
@@ -139,7 +152,7 @@
             display-name = "NAV";
         };
 
-        layer_2 {
+        sym {
             bindings = <
 &kp TILDE           &kp EXCL            &kp AT              &kp HASH            &kp DLLR            &kp PRCNT           &trans
 &kp CARET           &kp AMPS            &kp ASTRK           &kp LPAR            &kp RPAR            &kp DEL
@@ -160,29 +173,29 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_3 {
+        num {
             bindings = <
 &trans              &trans              &trans              &trans              &trans              &trans              &trans
 &trans              &trans              &trans              &trans              &trans              &trans
 
 &trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans
+&trans              &kp KP_N7           &kp KP_N8           &kp KP_N9           &kp KP_MINUS        &trans
 
 &trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans
+&trans              &kp KP_N4           &kp KP_N5           &kp KP_N6           &kp KP_PLUS         &trans
 
 &trans              &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans              &trans              &trans
+&trans              &kp KP_N1           &kp KP_N2           &kp KP_N3           &kp RET             &trans              &trans
 
 &trans              &trans              &trans              &trans              &trans              &trans
-&trans              &trans              &trans              &trans              &trans
+&trans              &trans              &kp LS(KP_ASTERISK) &kp N0              &kp KP_SLASH
             >;
 
-            display-name = "LAYER3";
+            display-name = "NUM";
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_4 {
+        sys {
             bindings = <
 &trans              &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4        &trans
 &trans              &trans              &trans              &trans              &trans              &trans
@@ -201,6 +214,28 @@
             >;
 
             display-name = "SYS";
+            sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
+        game {
+            bindings = <
+&trans              &trans              &trans              &trans              &trans              &trans              &trans
+&trans              &trans              &trans              &trans              &trans              &trans
+
+&trans              &trans              &trans              &trans              &trans              &trans              &trans
+&trans              &trans              &trans              &trans              &trans              &trans
+
+&trans              &kp A               &kp S               &kp D               &kp F               &kp G               &trans
+&kp H               &kp J               &kp K               &kp L               &kp SEMI            &trans
+
+&trans              &trans              &trans              &trans              &trans              &trans              &trans
+&trans              &trans              &trans              &trans              &trans              &trans              &trans
+
+&trans              &trans              &trans              &trans              &trans              &trans
+&trans              &trans              &trans              &trans              &trans
+            >;
+
+            display-name = "GAME";
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
     };
